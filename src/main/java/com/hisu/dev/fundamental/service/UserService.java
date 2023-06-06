@@ -1,14 +1,15 @@
 package com.hisu.dev.fundamental.service;
 
 import com.hisu.dev.fundamental.model.User;
+import com.hisu.dev.fundamental.model.response.UserResponseDTO;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface UserService {
-    List<User> getAll();
-    User getUserById(String id);
-
-    boolean addUser(User newUser);
-    boolean deleteUser(String id);
-    boolean updateUser(User updateUser);
+    ResponseEntity<List<UserResponseDTO>> getAll();
+    ResponseEntity<UserResponseDTO> getUserById(Long id);
+    ResponseEntity<UserResponseDTO> addUser(User newUser);
+    ResponseEntity<String> deleteUser(Long id);
+    ResponseEntity<UserResponseDTO> updateUser(User updateUser);
 }

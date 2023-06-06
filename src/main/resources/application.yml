@@ -4,6 +4,18 @@ server:
 spring:
   main:
     web-application-type: SERVLET
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQLDialect
+      format_sql: true
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/e4k
+    username: root
+    password: Root@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 springdoc:
   swagger-ui:
